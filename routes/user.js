@@ -3,6 +3,8 @@
  */
 var express = require('express');
 var router = express.Router();
+//var User = require('../model/index') 可以不写后面的index.js 默认会找该文件
+var User = require('../model').User;
 
 router.get('/signUp', function (req, res) {
     res.render('user/signup', {title: '注册'});
@@ -16,10 +18,10 @@ router.get('/signOut', function (req, res) {
 router.post('/signUp', function (req, res) {
     var user = req.body;
     if (user && user.username && user.password && user.email) {
-        User.create({
-            name: reqData.username,
-            password: reqData.password,
-            email: reqData.email
+        User.create(user).then(function (doc) {
+            res.redirect('/');
+        }, function (err) {
+            res.redirect('back');
         })
     }
 });

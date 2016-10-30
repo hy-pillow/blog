@@ -3,6 +3,8 @@
  */
 var mongoose = require('mongoose');
 
+mongoose.Promise = Promise;
+
 // 连接数据库
 mongoose.connect('mongodb://127.0.0.1/blog');
 
