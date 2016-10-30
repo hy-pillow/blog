@@ -13,4 +13,14 @@ router.get('/signIn', function (req, res) {
 router.get('/signOut', function (req, res) {
     res.send('退出');
 });
+router.post('/signUp', function (req, res) {
+    var user = req.body;
+    if (user && user.username && user.password && user.email) {
+        User.create({
+            name: reqData.username,
+            password: reqData.password,
+            email: reqData.email
+        })
+    }
+});
 module.exports = router;
