@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "zhaobiao <851038395@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hy-pillow/blog",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
