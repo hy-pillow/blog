@@ -39,7 +39,7 @@ bower install bootstrap --save
 ```
 后端依赖
 ```
-npm install express body-parser mongoose path ejs --save
+npm install express body-parser mongoose path ejs express-session --save
 ```
 
 ## 3. 配置路由

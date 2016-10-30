@@ -19,6 +19,8 @@ router.post('/signUp', function (req, res) {
     var user = req.body;
     if (user && user.username && user.password && user.email) {
         User.create(user).then(function (doc) {
+            // 当注册成功后，把保存的用户对象保存在session中
+            req.session.user = doc;
             res.redirect('/');
         }, function (err) {
             res.redirect('back');
