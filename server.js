@@ -2,16 +2,17 @@
  * Created by zhaob on 16/10/30.
  */
 var express = require('express');
+var path = require('path');
 var app = express();
+// 静态文件中间件
+app.use(express.static(path.resolve('public')));
 
-/**
- * / 首页
- * /user/signUp 注册
- * /user/signIn 登录
- * /user/signOut 退出
- *
- * /article/add 发表文章
- */
+/* 加载模板引擎 start*/
+app.set('view engine', 'html');
+app.set('views', path.resolve('views'));
+app.engine('.html', require('ejs').__express);
+/* 加载模板引擎 end*/
+
 var index = require('./routes/index');
 var user = require('./routes/user');
 var article = require('./routes/article');

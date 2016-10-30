@@ -5,6 +5,6 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/add', function (req, res) {
-    res.send('添加文章');
+    res.render('article/add', {title: '发表文章'});
 });
 module.exports = router;
